@@ -6,13 +6,7 @@ public class Teste {
         listaEn.incluir(6);
         listaEn.incluir(4);
         listaEn.incluir(55,2);
-        //System.out.println("Primeiro elemento da lista "+lista.getInicio().getElemento());
-        //System.out.println("Ultimo elemento da lista "+lista.getFim().getElemento());
-        //ListaSequencial<Integer> listas= new ListaSequencial<>(Integer.class);
-        //listas.incluir(3);
-        //listas.incluir(1);
-        //listas.incluir(8);
-        //listas.incluir(2);
+
         for(int i = 0;i< listaEn.getTamanho();i++){
            System.out.println(listaEn.get(i));
         }
@@ -32,7 +26,6 @@ public class Teste {
         }
         lista.limpar();
 
-        System.out.println(lista.get(2));
 
 
 
