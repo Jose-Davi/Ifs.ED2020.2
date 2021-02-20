@@ -1,15 +1,18 @@
 package br.edu.ifs.ED_20202.lista;
 
 import br.edu.ifs.ED_20202.ordenacao.IOrdenacao;
+import org.jetbrains.annotations.NotNull;
 
 import java.lang.reflect.InvocationTargetException;
+import java.util.Objects;
 
-public class ListaSequencial<T extends Comparable<T>> extends Lista<T>implements IOrdenacao {
+public class ListaSequencial<T extends Comparable<T>> extends Lista<T> {
 
 
     T[] lista;
     int qtdMax;
     int finalLista;
+    int inicioList;
     public ListaSequencial(Class<T> dataType){
         super();
         qtdMax = 10;
@@ -44,6 +47,7 @@ public class ListaSequencial<T extends Comparable<T>> extends Lista<T>implements
 
     @Override
     public void incluir(T elemento) throws Exception {
+
         if(this.finalLista<this.lista.length){
             this.lista[finalLista]=elemento;
             this.finalLista++;
@@ -60,6 +64,7 @@ public class ListaSequencial<T extends Comparable<T>> extends Lista<T>implements
         }
         this.lista[0]=elemento;
         this.finalLista++;
+
     }
 
 
@@ -74,6 +79,8 @@ public class ListaSequencial<T extends Comparable<T>> extends Lista<T>implements
         }
         this.lista[posicao]=elemento;
         this.finalLista++;
+
+
     }
 
     @Override
@@ -103,17 +110,6 @@ public class ListaSequencial<T extends Comparable<T>> extends Lista<T>implements
         return false;
     }
 
-    @Override
-    public void ordenar(int[] valores) {
-        int aux;
-        for(int i=0;i< valores.length;i++){
-            for(int j=0;j< valores.length-1;j++){
-                if(valores[j]>valores[j+1]){
-                    aux = valores[j];
-                    valores[j]=valores[j+1];
-                    valores[j+1]=aux;
-                }
-            }
-        }
-    }
-}
+
+ }
+

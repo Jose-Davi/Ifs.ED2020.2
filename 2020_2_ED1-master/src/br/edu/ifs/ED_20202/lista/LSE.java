@@ -142,6 +142,7 @@ public class LSE <T extends Comparable<T>> extends Lista<T>{
     public void limpar() {
         this.inicio.setProx(null);
         this.inicio = null;
+        this.tamanho=0;
 
     }
 
