@@ -1,11 +1,12 @@
 package br.edu.ifs.ED_20202.lista;
 
-public class LSE <T extends Comparable<T>> extends Lista<T>{
+public class ListaEncadeadaCircular<T extends Comparable<T>> extends Lista<T> {
+
     private No inicio;
     private No<T> fim;
     private int tamanho;
 
-    public LSE() {
+    public ListaEncadeadaCircular() {
         this.inicio=null;
         this.tamanho = 0;
     }
@@ -23,9 +24,11 @@ public class LSE <T extends Comparable<T>> extends Lista<T>{
         if(this.inicio==null && this.fim==null){
             this.inicio=novoElemento;
             this.fim=novoElemento;
+            this.fim.setProx(inicio);
         }else{
             this.fim.setProx(novoElemento);
             this.fim = novoElemento;
+            this.fim.setProx(inicio);
         }
         this.tamanho++;
 
@@ -38,12 +41,16 @@ public class LSE <T extends Comparable<T>> extends Lista<T>{
         if(this.tamanho==0){
             this.inicio=novoElemento;
             this.fim=novoElemento;
+           // this.fim.setProx(inicio);
         } else {
             aux=inicio;
             this.inicio=novoElemento;
             this.inicio.setProx(aux);
+           // this.fim.setProx(inicio);
+
         }
-        this.tamanho++;
+
+        this.fim.setProx(inicio);
 
     }
 
@@ -55,9 +62,10 @@ public class LSE <T extends Comparable<T>> extends Lista<T>{
             throw new IllegalArgumentException("Posição invalida!");
         }
 
-        if(posicao==this.tamanho){//observar erro tamanho -1;ideal
-            fim.setProx(novoElemento);
-            fim =novoElemento;
+        if(posicao==this.tamanho-1){
+            this.fim.setProx(novoElemento);
+            this.fim =novoElemento;
+            this.fim.setProx(inicio);
 
         }else
         if(posicao==0){
@@ -75,21 +83,19 @@ public class LSE <T extends Comparable<T>> extends Lista<T>{
 
     @Override
     public T get(int posicao) throws Exception {
-        int contador=0;
         No aux=inicio;
-        No elemento=null;
+
         if(this.tamanho==0){
             throw new IllegalAccessException("Lista vazia!");
-        }
-        while (aux != null) {
-            if(contador==posicao) {
-                //System.out.print("Elemnto da posição "+posicao+" é :");;
-                elemento = aux;
+        }for(int i=0;i<tamanho;i++){
+            if(i==posicao){
+                System.out.println(aux.getElemento());
+                break;
             }
-            aux = aux.getProx();
-            contador++;
+            aux=aux.getProx();
+
         }
-        return (T) elemento.getElemento();
+        return (T) aux.getElemento();
     }
 
 
@@ -114,7 +120,9 @@ public class LSE <T extends Comparable<T>> extends Lista<T>{
     public void remover(int posicao) throws Exception {
         No anterior=null;
         No atual = this.inicio;
-
+        if(posicao<0 || posicao>this.tamanho){
+            throw new Exception("Posição inválida!");
+        }
         for(int i=0;i<this.tamanho;i++){
             if(this.tamanho==1){
                 this.inicio=null;
@@ -124,9 +132,11 @@ public class LSE <T extends Comparable<T>> extends Lista<T>{
                 if(atual==inicio){
                     this.inicio=atual.getProx();
                     atual.setProx(null);
+                    this.fim.setProx(inicio);
                 }else if(atual==fim){
                     this.fim=anterior;
                     anterior.setProx(null);
+                    this.fim.setProx(inicio);
                 }else{
                     anterior.setProx(atual.getProx());
                     atual=null;
@@ -165,3 +175,4 @@ public class LSE <T extends Comparable<T>> extends Lista<T>{
         return false;
     }
 }
+
