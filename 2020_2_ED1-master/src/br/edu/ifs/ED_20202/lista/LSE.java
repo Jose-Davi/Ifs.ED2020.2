@@ -43,7 +43,7 @@ public class LSE <T extends Comparable<T>> extends Lista<T>{
             this.inicio=novoElemento;
             this.inicio.setProx(aux);
         }
-        this.tamanho++;
+
 
     }
 
@@ -75,21 +75,21 @@ public class LSE <T extends Comparable<T>> extends Lista<T>{
 
     @Override
     public T get(int posicao) throws Exception {
-        int contador=0;
         No aux=inicio;
-        No elemento=null;
+        int contador=0;
         if(this.tamanho==0){
-            throw new IllegalAccessException("Lista vazia!");
+            throw new IllegalArgumentException("Lista vazia!");
         }
         while (aux != null) {
-            if(contador==posicao) {
-                //System.out.print("Elemnto da posição "+posicao+" é :");;
-                elemento = aux;
+            if (posicao==contador){
+                return (T) aux.getElemento();
+
             }
             aux = aux.getProx();
             contador++;
+
         }
-        return (T) elemento.getElemento();
+        return (T) aux.getElemento();
     }
 
 

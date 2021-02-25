@@ -2,8 +2,8 @@ package br.edu.ifs.ED_20202.lista;
 
 public class Teste {
     public static void main(String[] args) throws Exception {
-        ListaEncadeadaCircular<Integer> list= new ListaEncadeadaCircular<>();
-        try {
+        ListaEncadeadaCircular<Integer> list = new ListaEncadeadaCircular<>();
+        /*try {
             list.incluir(3);
             list.incluir(2);
             list.incluir(1);
@@ -26,11 +26,25 @@ public class Teste {
        }
         System.out.println(list.contem(4));
         list.get(0);
-        //System.out.println("Elemento da Posicao 0 é: "+list.get(0));
+        System.out.println("Elemento da Posicao 0 é: "+list.get(0));
         System.out.println("Tamanho da lista:"+list.getTamanho());
         System.out.println(list.getInicio().getElemento());
         System.out.println(list.getFim().getElemento());
-        System.out.println(list.getFim().getProx().getElemento());
+        System.out.println(list.getFim().getProx().getElemento());**/
+        LSE<Integer> lista = new LSE<>();
+        lista.incluir(4);
+        lista.incluir(3);
+        lista.incluir(3);
+        lista.incluir(2, 0);
+        lista.incluir(5, 3);
 
+
+
+        System.out.println("Tamanho da lista:"+lista.getTamanho());
+        for(int i=0;i<lista.getTamanho();i++){
+            System.out.println(lista.get(i));
+
+
+        }
     }
 }
