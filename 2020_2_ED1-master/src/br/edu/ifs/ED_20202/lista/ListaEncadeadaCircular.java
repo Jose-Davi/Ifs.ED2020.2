@@ -167,6 +167,7 @@ public class ListaEncadeadaCircular<T extends Comparable<T>> extends Lista<T> {
         if(this.tamanho==0){
             throw new IllegalArgumentException("Lista vazia!");
         }
+
         while (aux != null) {
             if (aux.getElemento().equals(elemento)) {
                 return true;

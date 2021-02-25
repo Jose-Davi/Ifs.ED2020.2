@@ -31,7 +31,7 @@ public class Teste {
         System.out.println(list.getInicio().getElemento());
         System.out.println(list.getFim().getElemento());
         System.out.println(list.getFim().getProx().getElemento());**/
-        LSE<Integer> lista = new LSE<>();
+        ListaDuplaCircular<Integer> lista = new ListaDuplaCircular<>();
         lista.incluir(4);
         lista.incluir(3);
         lista.incluir(3);
@@ -43,8 +43,21 @@ public class Teste {
         System.out.println("Tamanho da lista:"+lista.getTamanho());
         for(int i=0;i<lista.getTamanho();i++){
             System.out.println(lista.get(i));
-
-
         }
+
+        lista.remover(2);
+        System.out.println("___Depois da remoção___");
+        for(int i=0;i<lista.getTamanho();i++){
+            System.out.println(lista.get(i));
+        }
+        /*System.out.println("------------------------------");
+        System.out.println(lista.getInicio().getElemento());
+        System.out.println(lista.getFim().getElemento());
+        System.out.println(lista.getFim().getProx().getElemento());
+        System.out.println(lista.getInicio().getAnterior().getElemento());
+        System.out.println("Buscando elementos");
+        System.out.println(lista.contem(5));
+        System.out.println(lista.get(0));
+        System.out.println(lista.getPosElemento(5));*/
     }
 }
