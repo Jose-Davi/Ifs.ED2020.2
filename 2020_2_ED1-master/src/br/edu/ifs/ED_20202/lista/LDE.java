@@ -48,7 +48,6 @@ public class LDE <T extends Comparable<T>> extends Lista<T>{
             novoElemento.setProx(inicio);
             this.inicio=novoElemento;
         }
-        this.tamanho++;
 
     }
 

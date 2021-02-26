@@ -41,14 +41,15 @@ public class ListaEncadeadaCircular<T extends Comparable<T>> extends Lista<T> {
         if(this.tamanho==0){
             this.inicio=novoElemento;
             this.fim=novoElemento;
-           // this.fim.setProx(inicio);
+
         } else {
             aux=inicio;
             this.inicio=novoElemento;
             this.inicio.setProx(aux);
-           // this.fim.setProx(inicio);
+
 
         }
+        this.tamanho++;
 
         this.fim.setProx(inicio);
 
@@ -66,18 +67,23 @@ public class ListaEncadeadaCircular<T extends Comparable<T>> extends Lista<T> {
             this.fim.setProx(novoElemento);
             this.fim =novoElemento;
             this.fim.setProx(inicio);
+            this.tamanho++;
 
-        }else
+        }else{
         if(posicao==0){
             incluirInicio(elemento);
+
         }else{
             for(int i=0;i<posicao-1;i++){
                 aux = aux.getProx();
             }
             novoElemento.setProx(aux.getProx());
             aux.setProx(novoElemento);
-            aux=novoElemento;}
-        this.tamanho++;
+            aux=novoElemento;
+            this.tamanho++;
+        }
+        }
+
 
     }
 
@@ -89,7 +95,6 @@ public class ListaEncadeadaCircular<T extends Comparable<T>> extends Lista<T> {
             throw new IllegalAccessException("Lista vazia!");
         }for(int i=0;i<tamanho;i++){
             if(i==posicao){
-                System.out.println(aux.getElemento());
                 break;
             }
             aux=aux.getProx();
@@ -107,7 +112,7 @@ public class ListaEncadeadaCircular<T extends Comparable<T>> extends Lista<T> {
         if(this.tamanho==0){
             throw new IllegalArgumentException("Lista vazia!");
         }
-        while (aux != null) {
+        for(int i=0;i<tamanho;i++) {
             if (aux.getElemento().equals(elemento)) {
                 return contador;
             }
@@ -145,7 +150,7 @@ public class ListaEncadeadaCircular<T extends Comparable<T>> extends Lista<T> {
             anterior = atual;
             atual = atual.getProx();
         }
-
+        this.tamanho--;
     }
 
     @Override
@@ -168,7 +173,7 @@ public class ListaEncadeadaCircular<T extends Comparable<T>> extends Lista<T> {
             throw new IllegalArgumentException("Lista vazia!");
         }
 
-        while (aux != null) {
+        for(int i=0;i<tamanho;i++){
             if (aux.getElemento().equals(elemento)) {
                 return true;
             }

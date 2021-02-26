@@ -80,9 +80,9 @@ public class LSE <T extends Comparable<T>> extends Lista<T>{
         if(this.tamanho==0){
             throw new IllegalArgumentException("Lista vazia!");
         }
-        while (aux != null) {
+       while(aux!=null){
             if (posicao==contador){
-                return (T) aux.getElemento();
+               break;
 
             }
             aux = aux.getProx();
