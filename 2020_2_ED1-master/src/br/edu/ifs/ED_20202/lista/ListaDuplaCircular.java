@@ -53,6 +53,7 @@ public class ListaDuplaCircular<T extends Comparable<T>> extends Lista<T> {
         }
         this.inicio.setAnterior(fim);
         this.fim.setProx(inicio);
+        this.tamanho++;
 
     }
 
@@ -69,6 +70,7 @@ public class ListaDuplaCircular<T extends Comparable<T>> extends Lista<T> {
             novoElemento.setAnterior(fim);
             fim.setProx(novoElemento);
             fim = novoElemento;
+            this.tamanho++;
             //modificacao para circular
             this.inicio.setAnterior(fim);
             this.fim.setProx(inicio);
@@ -83,9 +85,9 @@ public class ListaDuplaCircular<T extends Comparable<T>> extends Lista<T> {
             novoElemento.setProx(aux.getProx());
             aux.setProx(novoElemento);
             novoElemento.getProx().setAnterior(novoElemento);
-
+            this.tamanho++;
         }
-        this.tamanho++;
+
 
     }
 

@@ -65,8 +65,7 @@ public class LDE <T extends Comparable<T>> extends Lista<T>{
             novoElemento.setAnterior(fim);
             fim.setProx(novoElemento);
             fim = novoElemento;
-
-
+            this.tamanho++;
         }else {
            NoDupla aux= inicio;
            for(int i=0;i<posicao-1;i++){
@@ -76,9 +75,9 @@ public class LDE <T extends Comparable<T>> extends Lista<T>{
            novoElemento.setProx(aux.getProx());
            aux.setProx(novoElemento);
            novoElemento.getProx().setAnterior(novoElemento);
-
+           this.tamanho++;
         }
-        this.tamanho++;
+
 
     }
 
