@@ -114,7 +114,6 @@ public class ListaSequencialCircular <T extends Comparable<T>> extends Lista<T> 
             }else{
                 inicio=(fim+tamanho)%qtdMax;
                 fim=(fim+1)%qtdMax;}
-
             lista[inicio]=elemento;
             this.tamanho++;
 
