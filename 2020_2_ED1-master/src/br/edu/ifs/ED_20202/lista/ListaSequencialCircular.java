@@ -174,7 +174,6 @@ public class ListaSequencialCircular <T extends Comparable<T>> extends Lista<T> 
         }
         @Override
         public int getTamanho() {
-
             return this.tamanho;
         }
 
