@@ -9,6 +9,7 @@ public class ListaSequencialCircular <T extends Comparable<T>> extends Lista<T> 
         private int inicio;
         int fimLista;
 
+
         public ListaSequencialCircular(Class<T> dataType){
             super();
             qtdMax = 5;
@@ -105,26 +106,19 @@ public class ListaSequencialCircular <T extends Comparable<T>> extends Lista<T> 
         public void incluirInicio(T elemento) throws Exception {
             if(this.tamanho==qtdMax){
                 throw new Exception("Lista ja está cheia!");
-            }if(this.tamanho==0){
+            }else
+            if(this.tamanho==0){
                 lista[fim]=elemento;
                 inicio=fim;
                 fim=(fim+1)%qtdMax;
-            }else{if(inicio!=0){
-                inicio=inicio-1;
-                lista[inicio]=elemento;
+            }else{
+                inicio=(fim+tamanho)%qtdMax;
                 fim=(fim+1)%qtdMax;}
-                else
-                lista[inicio=(inicio+tamanho)%qtdMax] = elemento;
-                fim=(fim+1)%qtdMax;
-                }
+
+            lista[inicio]=elemento;
             this.tamanho++;
-            this.fimLista=tamanho-1;
-               // lista[(inicio + tamanho) % qtdMax] = elemento;
 
         }
-
-
-
 
         @Override
         public void incluir(T elemento, int posicao) throws Exception {
