@@ -50,7 +50,6 @@ public class ListaEncadeadaCircular<T extends Comparable<T>> extends Lista<T> {
 
         }
         this.tamanho++;
-
         this.fim.setProx(inicio);
 
     }
