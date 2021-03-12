@@ -18,6 +18,7 @@ public class ListaEncadeadaCircular<T extends Comparable<T>> extends Lista<T> {
         return fim;
     }
 
+
     @Override
     public void incluir(T elemento) throws Exception {
         No<T> novoElemento = new No<T>(elemento);
