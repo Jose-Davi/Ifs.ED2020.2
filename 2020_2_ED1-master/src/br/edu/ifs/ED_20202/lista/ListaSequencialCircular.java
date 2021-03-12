@@ -182,12 +182,10 @@ public class ListaSequencialCircular <T extends Comparable<T>> extends Lista<T> 
             for(int i=0;i<this.tamanho;i++){
                 if(this.lista[i].equals(elemento)){
                     return true;
-
                 }
             }
             return false;
         }
-
 
     }
 
