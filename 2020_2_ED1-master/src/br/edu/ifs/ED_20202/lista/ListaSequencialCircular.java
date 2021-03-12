@@ -79,6 +79,7 @@ public class ListaSequencialCircular <T extends Comparable<T>> extends Lista<T> 
                 }
             }
          return -1;
+
         }
 
         @Override
