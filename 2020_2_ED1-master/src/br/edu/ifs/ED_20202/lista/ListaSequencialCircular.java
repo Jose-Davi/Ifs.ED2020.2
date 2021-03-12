@@ -81,7 +81,6 @@ public class ListaSequencialCircular <T extends Comparable<T>> extends Lista<T> 
          return -1;
 
         }
-
         @Override
         public void incluir(T elemento) throws Exception {
             if(this.tamanho==this.qtdMax){
