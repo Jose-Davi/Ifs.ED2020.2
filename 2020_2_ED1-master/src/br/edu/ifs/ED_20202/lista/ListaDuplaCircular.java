@@ -75,7 +75,6 @@ public class ListaDuplaCircular<T extends Comparable<T>> extends Lista<T> {
             this.inicio.setAnterior(fim);
             this.fim.setProx(inicio);
 
-
         }else {
             NoDupla aux= inicio;
             for(int i=0;i<posicao-1;i++){

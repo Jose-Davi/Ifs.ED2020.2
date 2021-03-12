@@ -67,7 +67,6 @@ public class ListaSequencialCircular <T extends Comparable<T>> extends Lista<T> 
             }
              return this.lista[(inicio+posicao)%qtdMax];
         }
-
         @Override
         public int getPosElemento(T elemento) throws Exception {
            if (tamanho == 0 ){
