@@ -66,7 +66,6 @@ public class ListaSequencialCircular <T extends Comparable<T>> extends Lista<T> 
                 throw new IllegalAccessException("Lista Vazia!");
             }
              return this.lista[(inicio+posicao)%qtdMax];
-
         }
 
         @Override
