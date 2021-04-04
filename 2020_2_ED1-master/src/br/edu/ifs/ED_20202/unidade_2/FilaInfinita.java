@@ -6,18 +6,16 @@ public class FilaInfinita<T> {
     int qtMax;
 
     public FilaInfinita() {
-        ;
+
         this.tamanho = 0;
         this.qtMax = 1000;
         this.elementos = (T[]) new Object[qtMax];
 
     }
 
-    public void incluir(T elemento) throws FilaCheiaException {
+    public void incluir(T elemento)  {
+
         this.aumentarCap();
-        if (this.tamanho == qtMax) {
-            throw new FilaCheiaException();
-        }this.aumentarCap();
         this.elementos[this.tamanho++] = elemento;
 
     }
@@ -71,8 +69,6 @@ public class FilaInfinita<T> {
         }
     }
 }
-    class FilaCheiaException extends Exception {
-    }
 
     class FilaVaziaException extends Exception {
     }

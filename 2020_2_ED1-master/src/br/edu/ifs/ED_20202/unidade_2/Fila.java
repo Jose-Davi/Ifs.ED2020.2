@@ -37,9 +37,11 @@ public class Fila <T>{
     public int getQtd(){
         return this.tamanho;
     }
+
     public boolean estahVazia(){
         return this.tamanho==0;
     }
+
     public T visualizarProximo()throws FilaVaziaException{
         if(this.estahVazia()){
             throw new FilaVaziaException();
